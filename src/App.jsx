@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <Header></Header>
-      <div className='flex'>
+      <div className='flex p-5'>
         <Blogs></Blogs>
         <Bookmarks></Bookmarks>
       </div>
