@@ -16,7 +16,7 @@ const Blog = ({blog, handleAddToBookmark}) => {
                 </div>
                 <div className='flex items-center'>
                     <span>{reading_time} min read</span>
-                    <button className='ml-2' onClick={() => handleAddToBookmark()}>
+                    <button className='ml-2' onClick={() => handleAddToBookmark(blog)}>
                         <CiBookmark></CiBookmark>
                     </button>
                 </div>

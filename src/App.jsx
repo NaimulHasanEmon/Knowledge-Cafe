@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import './App.css'
 import Blogs from './components/Blogs/Blogs'
 import Bookmarks from './components/Bookmarks/Bookmarks'
@@ -9,17 +9,16 @@ function App() {
   const [bookmark, setBookmark] = useState([])
 
   const handleAddToBookmark = blog => {
-    console.log('bookmark clicked!')
+    const newBookmarks = [...bookmark, blog]
+    setBookmark(newBookmarks)
   }
 
   return (
     <>
       <Header></Header>
-      <div className='md:flex p-4 max-w-7xl mx-auto'>
-        <Blogs
-          handleAddToBookmark = { handleAddToBookmark}
-        ></Blogs>
-        <Bookmarks></Bookmarks>
+      <div className='md:flex gap-10 p-4 max-w-7xl mx-auto'>
+        <Blogs handleAddToBookmark = { handleAddToBookmark}></Blogs>
+        <Bookmarks bookmark = {bookmark}></Bookmarks>
       </div>
     </>
   )
